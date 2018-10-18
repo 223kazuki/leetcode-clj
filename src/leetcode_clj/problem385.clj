@@ -17,11 +17,3 @@
                                 (apply str)
                                 (Integer/parseInt))]
                      (-> stack pop vec (conj [n]))))))))))
-
-(and
- (= (deserialize "123") [123])
- (= (deserialize "[123]") [123])
- (= (deserialize "[-123]") [-123])
- (= (deserialize "[123,[456]]") [123 [456]])
- (= (deserialize "[123,[456,[789]]]") [123 [456 [789]]])
- (= (deserialize "[123,[456],[789]]") [123 [456] [789]]))
