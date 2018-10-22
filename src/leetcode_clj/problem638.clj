@@ -33,15 +33,3 @@
             result (min result amount)]
         (recur result queue))
       result)))
-
-(= (next-node 0 [3 2] [2 5] [3 0 5])
-   {:rest-needs [0 2] :offer-amount 5 :amount 15})
-
-(= (next-node 0 [1 2 1] [2 3 4] [2 2 1 9])
-   nil)
-
-(= (next-node 0 [1 2 1] [2 3 4] [1 1 0 4])
-   {:rest-needs [0 1 1] :offer-amount 4 :amount 11})
-
-(= (next-node 1 [1 2 1] [2 3 4] [1 1 0 4])
-   {:rest-needs [0 1 1] :offer-amount 5 :amount 12})
