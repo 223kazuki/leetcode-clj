@@ -4,7 +4,8 @@
             [clojure.string :as str]
             [leetcode-clj.problem385 :as p385]
             [leetcode-clj.problem477 :as p477]
-            [leetcode-clj.problem638 :as p638]))
+            [leetcode-clj.problem638 :as p638]
+            [leetcode-clj.problem416 :as p416]))
 
 (deftest problem385-test
   (is (= (p385/deserialize "123") [123]))
@@ -25,3 +26,7 @@
          {:rest-needs [0 1 1] :offer-amount 5 :amount 12}))
   (is (== (p638/shopping-offers [2,5] [[3,0,5],[1,2,10]] [3,2]) 14))
   (is (== (p638/shopping-offers [2,3,4] [[1,1,0,4],[2,2,1,9]] [1,2,1]) 11)))
+
+(deftest problem416-test
+  (is (p416/can-partition [1, 5, 11, 5]))
+  (is (not (p416/can-partition [1, 2, 3, 5]))))
